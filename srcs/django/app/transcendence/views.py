@@ -13,6 +13,18 @@ from django.middleware.csrf import get_token
 from database.models import UserProfile
 
 @api_view(['GET'])
+async def rpsGame(request: Request):
+    return await pages.rpsGame.response(request)
+
+@api_view(['GET'])
+def rps(request: Request):
+    return pages.rps.response(request)
+
+@api_view(['GET'])
+async def rpsInvite(request: Request):
+    return await pages.rpsInvite.response(request)
+
+@api_view(['GET'])
 async def auth(request: Request):
     return await pages.auth.response(request)
 

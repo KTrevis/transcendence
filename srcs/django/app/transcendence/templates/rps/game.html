@@ -1,0 +1,9 @@
+{% extends "modules/base.html" %}
+{% block title %}Tournament{% endblock %}
+{% block content %}
+{% include "modules/navbar.html" %}
+<a class="btn btn-primary" href="/rps/choice?action=rock"></a>
+<a class="btn btn-primary" href="/rps/choice?action=paper"></a>
+<a class="btn btn-primary" href="/rps/choice?action=scissors"></a>
+<script type="module" src="/static/rps/RPSSocket.js"></script>
+{% endblock %}

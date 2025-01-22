@@ -11,6 +11,10 @@ from .tournament import lobby as tournamentLobby
 from .tournament import leave as tournamentLeave
 from .tournament import start as tournamentStart
 
+from .rps import game as rpsGame
+from .rps import rps
+from .rps import invite as rpsInvite
+
 from .pong import lobby
 
 from .api.auth import login, logout, register

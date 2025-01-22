@@ -14,7 +14,7 @@ export default class BaseWebSocket {
 
     /** @param {MessageEvent} e */
     receive(e) {
-        console.error("function not overloaded")
+        console.error(`${e.data} function not overloaded`)
     }
     
     /** @param {Event} e */

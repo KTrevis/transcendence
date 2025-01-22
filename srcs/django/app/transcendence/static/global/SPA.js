@@ -85,7 +85,7 @@ async function getHTML(url, options, addToHistory) {
 	return await res.text()
 }
 
-/** 
+/**
  * @param {string} url
  * @param {PageOptions} options
  * @param {boolean} addToHistory 

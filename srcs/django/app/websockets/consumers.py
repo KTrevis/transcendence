@@ -154,3 +154,7 @@ class Pong(BaseConsumer):
                         redisClient.hmset(key, {"direction": "down"})
                     case _:
                         redisClient.delete(key)
+
+class RPSConsumer(BaseConsumer):
+    def __init__(self):
+        super().__init__("rps")

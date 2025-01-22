@@ -20,6 +20,11 @@ from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
+
+    path("rps/", views.rps),
+    path("rps/invite", views.rpsInvite),
+    path("rps/game", views.rpsGame),
+
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
     path("auth/", views.auth, name="auth"),

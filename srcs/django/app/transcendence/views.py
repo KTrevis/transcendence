@@ -17,6 +17,10 @@ async def rpsGame(request: Request):
     return await pages.rpsGame.response(request)
 
 @api_view(['GET'])
+async def rpsChoice(request: Request):
+    return await pages.rpsChoice.response(request)
+
+@api_view(['GET'])
 def rps(request: Request):
     return pages.rps.response(request)
 

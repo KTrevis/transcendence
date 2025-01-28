@@ -24,6 +24,7 @@ urlpatterns = [
     path("rps/", views.rps),
     path("rps/invite", views.rpsInvite),
     path("rps/game", views.rpsGame),
+    path("rps/game/choice", views.rpsChoice),
 
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),

@@ -158,3 +158,7 @@ class Pong(BaseConsumer):
 class RPSConsumer(BaseConsumer):
     def __init__(self):
         super().__init__("rps")
+    
+    async def receive(self, text_data: str):
+        print("222222222222222222222222222222222222", flush=True)
+        print(text_data, flush=True) 

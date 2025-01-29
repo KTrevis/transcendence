@@ -2,9 +2,10 @@ from . import auth
 from . import index
 from . import settings
 from . import friends
-from . import play
+from .pong import play
+from .pong import result
+
 from . import profile
-from . import profile_list
 from . import update_settings
 
 

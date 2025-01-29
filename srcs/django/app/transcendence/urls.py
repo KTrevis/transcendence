@@ -29,10 +29,10 @@ urlpatterns = [
     path("settings/", views.settings, name="settings"),
     path("friends/", views.friends, name="friends"),
     path("profile/", views.profile, name="profile"),
-    path("profile_list/", views.profile_list, name="profile_list"),
 
     path("pong/lobby/", views.lobby, name="lobby"),
     path("pong/play/", views.play, name="playPong"),
+    path("result/", views.result, name="result"),
 
     path("tournament/create/", views.tournament, name="tournament"),
     path("tournament/lobby/", views.tournamentLobby, name="tournamentLobby"),

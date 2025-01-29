@@ -30,6 +30,16 @@
     </tbody>
 </table>
 
+{% comment %} <div class="col-3" style="background-color: transparent;">
+    {% load static %}
+    <img class="img-fluid"
+    src="{% if avatar %}{{ avatar.url }}{% else %}{% static 'images/avatar3.png' %}{% endif %}" 
+    alt="avatar"
+    style="background-color: transparent;"
+    width="300" 
+    height="300"/>
+</div> {% endcomment %}
+
 <div class="text-center my-5">
     <a href="/tournament/create/" class="btn btn-primary">Create Tournament</a>
 </div>

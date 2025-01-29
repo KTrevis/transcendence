@@ -66,19 +66,16 @@ async def lobby(request: Request):
 
 @api_view(['GET'])
 def play(request: Request):
-    return pages.play.response(request)
+    return pages.pong.play.response(request)
+
+@api_view(['GET'])
+def result(request: Request):
+    return pages.pong.result.response(request)
 
 @api_view(['GET'])
 async def profile(request: Request):
     return await pages.profile.response(request)
 
-@api_view(['GET'])
-def profile_list(request: Request):
-    return pages.profile_list.response(request)
-
-# @api_view(['GET'])
-# def profile_detail(request: Request, id):
-#     return pages.profile_detail.response(request, id)
 
 @api_view(['POST'])
 async def addFriend(request: Request):

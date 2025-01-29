@@ -140,7 +140,7 @@ class Ball:
 
         game = await PongHistory.objects.acreate(player1=self.p1.user, player2=self.p2.user,
             player1_score=self.p1.score, player2_score=self.p2.score)
-        data = {"redirect": f"/result/?game={game.id}"}
+        data = {"redirect": f"/results/?game={game.id}"}
         await sendMessageWS(self.p1.user, "notifications", json.dumps(data))
         await sendMessageWS(self.p2.user, "notifications", json.dumps(data))
         return self.p1.user if self.p1.score > self.p2.score else self.p2.user

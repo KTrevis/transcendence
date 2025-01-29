@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,6 +29,8 @@ urlpatterns = [
     path("settings/", views.settings, name="settings"),
     path("friends/", views.friends, name="friends"),
     path("profile/", views.profile, name="profile"),
+    path("profile_list/", views.profile_list, name="profile_list"),
+
     path("pong/lobby/", views.lobby, name="lobby"),
     path("pong/play/", views.play, name="playPong"),
 
@@ -43,13 +48,19 @@ urlpatterns = [
     path("api/friend/accept", views.acceptFriend, name="acceptFriend"),
     path("api/friend/remove", views.removeFriend, name="rejectFriend"),
     path("api/friend/send-message", views.sendMessage, name="sendMessage"),
+    path("api/friend/open-message", views.openMessage, name="openMessage"),
 
     path("api/token", views.getToken, name="createToken"),
     path("api/token/refresh", views.refreshToken, name="refreshToken"),
     path("api/settings/update/", views.update_settings, name="update_settings"),
+    path("api/settings/remove-avatar/", views.remove_avatar, name="remove-avatar"),
     path("api/user/is_2fa_enabled/", views.is_2fa_enabled, name="is_2fa_enabled"),
     path("api/verify_otp/", views.verify_otp, name="verify_otp"),
     path("api/csrf-token/", views.get_csrf_token, name="get_csrf_token"),
     path('auth/login42/', views.auth_with_42, name='login42'),
     path('auth/callback42/', views.callback_from_42, name='callback42'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

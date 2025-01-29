@@ -50,7 +50,11 @@ def settings(request: Request):
 
 @api_view(['POST'])
 def update_settings(request: Request):
-    return pages.settings.handle_update_settings(request)
+    return pages.update_settings.handle_update_settings(request)
+
+@api_view(['POST'])
+def remove_avatar(request: Request):
+    return pages.update_settings.handle_remove_avatar(request)
 
 @api_view(['GET'])
 async def friends(request: Request):
@@ -67,6 +71,14 @@ def play(request: Request):
 @api_view(['GET'])
 async def profile(request: Request):
     return await pages.profile.response(request)
+
+@api_view(['GET'])
+def profile_list(request: Request):
+    return pages.profile_list.response(request)
+
+# @api_view(['GET'])
+# def profile_detail(request: Request, id):
+#     return pages.profile_detail.response(request, id)
 
 @api_view(['POST'])
 async def addFriend(request: Request):
@@ -119,6 +131,10 @@ def verify_otp(request):
 async def sendMessage(request: Request):
     print(request.user)
     return await pages.sendMessage.response(request)
+
+@api_view(['POST'])
+async def openMessage(request: Request):
+    return await pages.openMessage.response(request)
 
 @authentication_classes([])
 @permission_classes([AllowAny])

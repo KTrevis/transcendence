@@ -21,6 +21,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
+from django_prometheus import exports
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -53,8 +54,10 @@ urlpatterns = [
     path("api/csrf-token/", views.get_csrf_token, name="get_csrf_token"),
     path('auth/login42/', views.auth_with_42, name='login42'),
     path('auth/callback42/', views.callback_from_42, name='callback42'),
-]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+	path('api/metrics/', exports.ExportToDjangoView, name='django-metrics'),
+]
 

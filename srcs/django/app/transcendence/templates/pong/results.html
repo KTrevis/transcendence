@@ -22,7 +22,6 @@
         }
     }
 
-    /* 💥 Game Over avec effet tremblement + rouge clignotant */
   .loser-text {
     font-size: 3rem;
     font-weight: bold;
@@ -45,7 +44,6 @@
 
 
 <div class="container text-center mt-5">
-    <!-- Affichage du message "Well Done" ou "Game Over" -->
     {% if is_winner %}
         <h2 class="winner-text text-success">🎉 Well Done! 🎉</h2>
     {% else %}
@@ -87,12 +85,11 @@
 </div>
 
 
-<!-- Script de confettis -->
 {% if is_winner %}
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
     function launchConfetti() {
-        var duration = 3 * 1000; // 3 secondes
+        var duration = 3 * 1000;
         var end = Date.now() + duration;
 
         (function frame() {
@@ -115,7 +112,6 @@
         }());
     }
 
-    // Lancer les confettis dès que la page charge
     window.onload = launchConfetti;
 </script>
 {% endif %}

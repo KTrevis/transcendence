@@ -69,8 +69,8 @@ def play(request: Request):
     return pages.pong.play.response(request)
 
 @api_view(['GET'])
-def result(request: Request):
-    return pages.pong.result.response(request)
+def results(request: Request):
+    return pages.pong.results.response(request)
 
 @api_view(['GET'])
 async def profile(request: Request):
@@ -126,7 +126,7 @@ def verify_otp(request):
 
 @api_view(['POST'])
 async def sendMessage(request: Request):
-    print(request.user)
+    # print(request.user)
     return await pages.sendMessage.response(request)
 
 @api_view(['POST'])

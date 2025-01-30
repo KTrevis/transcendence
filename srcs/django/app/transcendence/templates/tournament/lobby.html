@@ -2,25 +2,12 @@
 {% block title %}Tournament{% endblock %}
 {% block content %}
 {% include "modules/navbar.html" %}
-<style>
-  #pong-container {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-  }
 
-  #pong-container>canvas {
-    max-height: 80vh;
-    margin-bottom: 2vh;
-  }
-</style>
-
-<div id="pong-container">
-  <div class="container mt-5">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold">{{ organizer.username }}'s Tournament</h2>
+  <div class="container">
+    <div class="title-section">
+      <h2 class="fw-bold">{{ organizer.username }}'s tournament</h2>
     </div>
-    
+  
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card shadow-sm">
@@ -29,7 +16,7 @@
           </div>
           <div class="card-body">
             <table class="table table-hover text-center">
-              <thead class="table-light">
+              <thead class="table-header">
                 <tr>
                   <th>Username</th>
                   <th>Profile</th>
@@ -80,8 +67,6 @@
       </div>
     </div>
   </div>
-</div>
-
 
 <script type="module" src="/static/pong/PongSocket.js"></script>
 {% endblock %}

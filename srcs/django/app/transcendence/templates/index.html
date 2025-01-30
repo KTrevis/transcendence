@@ -3,9 +3,12 @@
 {% block content %}
 {% include "modules/navbar.html" %}
 
-<div class="container my-4">
-    <h3 class="text-center mb-4">Scoreboard</h3>
-    <table class="table table-bordered table-striped">
+<div class="container">
+    <div class="title-section">
+      <h2 class="fw-bold">Scoreboard</h2>
+    </div>
+    <div class="table-container" style="max-width: 30rem; margin-left: auto; margin-right: auto;">
+        <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
         <tr>
             <th>Player</th>
@@ -29,16 +32,7 @@
         {% endfor %}
     </tbody>
 </table>
-
-{% comment %} <div class="col-3" style="background-color: transparent;">
-    {% load static %}
-    <img class="img-fluid"
-    src="{% if avatar %}{{ avatar.url }}{% else %}{% static 'images/avatar3.png' %}{% endif %}" 
-    alt="avatar"
-    style="background-color: transparent;"
-    width="300" 
-    height="300"/>
-</div> {% endcomment %}
+</div>
 
 <div class="text-center my-5">
     <a href="/tournament/create/" class="btn btn-primary">Create Tournament</a>

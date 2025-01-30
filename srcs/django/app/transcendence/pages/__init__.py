@@ -3,7 +3,7 @@ from . import index
 from . import settings
 from . import friends
 from .pong import play
-from .pong import result
+from .pong import results
 
 from . import profile
 from . import update_settings

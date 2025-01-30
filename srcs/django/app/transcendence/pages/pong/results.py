@@ -24,4 +24,4 @@ def response(request: Request):
         'winner': winner,
         }
     
-    return render(request, "pong/result.html", context)
+    return render(request, "pong/results.html", context)                            

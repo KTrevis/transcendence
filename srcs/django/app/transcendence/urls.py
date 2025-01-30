@@ -32,7 +32,7 @@ urlpatterns = [
 
     path("pong/lobby/", views.lobby, name="lobby"),
     path("pong/play/", views.play, name="playPong"),
-    path("result/", views.result, name="result"),
+    path("results/", views.results, name="result"),
 
     path("tournament/create/", views.tournament, name="tournament"),
     path("tournament/lobby/", views.tournamentLobby, name="tournamentLobby"),

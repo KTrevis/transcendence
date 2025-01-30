@@ -24,9 +24,6 @@ def response(request: Request) -> Response:
             
 	tournaments = getTournaments(user)
  
-	print(tournament_results, flush=True)
-	# print(tournament_results1, flush=True)
-
 	return render(request, "index.html",
 		{"tournaments": tournaments,
      	"results": tournament_results,

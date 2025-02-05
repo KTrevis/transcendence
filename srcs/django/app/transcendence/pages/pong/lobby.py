@@ -33,11 +33,6 @@ async def response(req: Request):
     if not userIsLoggedIn(friend):
         return redirect(f"/friends/?error={friend.username} is not online", status=401)
     
-    # message = json.dumps({
-    #     "message": f"{user.username} invites you to play pong.</a>",
-    #     "link":f"/pong/lobby/?opponent={user.username}",
-    #     "refresh": ["/pong/"]
-    # })
     format = f"<a href='/pong/lobby/?opponent={user.username}' style='text-decoration: none;'>"
     format += f"{user.username} invites you to play pong.</a>"
     format += "</a>"
